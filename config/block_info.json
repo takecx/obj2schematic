@@ -1,0 +1,614 @@
+[
+    {
+        "COLOR_NAME": "GRASS",
+        "COLOR": [
+            127,
+            178,
+            56
+        ],
+        "BLOCK_NAME": "草ブロック",
+        "BLOCK_ID": 2,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "SAND",
+        "COLOR": [
+            247,
+            233,
+            163
+        ],
+        "BLOCK_NAME": "シラカバの木材",
+        "BLOCK_ID": 5,
+        "DATA": 2,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "CLOTH",
+        "COLOR": [
+            199,
+            199,
+            199
+        ],
+        "BLOCK_NAME": "クモの巣",
+        "BLOCK_ID": 30,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "TNT",
+        "COLOR": [
+            255,
+            0,
+            0
+        ],
+        "BLOCK_NAME": "レッドストーンブロック",
+        "BLOCK_ID": 152,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "ICE",
+        "COLOR": [
+            160,
+            160,
+            255
+        ],
+        "BLOCK_NAME": "氷塊",
+        "BLOCK_ID": 174,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "IRON",
+        "COLOR": [
+            167,
+            167,
+            167
+        ],
+        "BLOCK_NAME": "鉄ブロック",
+        "BLOCK_ID": 42,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "FOLIAGE",
+        "COLOR": [
+            0,
+            124,
+            0
+        ],
+        "BLOCK_NAME": "オークの葉",
+        "BLOCK_ID": 18,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "SNOW",
+        "COLOR": [
+            255,
+            255,
+            255
+        ],
+        "BLOCK_NAME": "雪",
+        "BLOCK_ID": 80,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "CLAY",
+        "COLOR": [
+            164,
+            168,
+            184
+        ],
+        "BLOCK_NAME": "粘土",
+        "BLOCK_ID": 82,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "DIRT",
+        "COLOR": [
+            151,
+            109,
+            77
+        ],
+        "BLOCK_NAME": "ジャングルの木材",
+        "BLOCK_ID": 5,
+        "DATA": 3,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "STONE",
+        "COLOR": [
+            112,
+            112,
+            112
+        ],
+        "BLOCK_NAME": "石",
+        "BLOCK_ID": 1,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "WATER",
+        "COLOR": [
+            64,
+            64,
+            255
+        ],
+        "BLOCK_NAME": "水",
+        "BLOCK_ID": 9,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "WOOD",
+        "COLOR": [
+            143,
+            119,
+            72
+        ],
+        "BLOCK_NAME": "オークの木材",
+        "BLOCK_ID": 5,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "QUARTZ",
+        "COLOR": [
+            255,
+            252,
+            245
+        ],
+        "BLOCK_NAME": "シラカバの原木",
+        "BLOCK_ID": 17,
+        "DATA": 6,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "ADOBE",
+        "COLOR": [
+            216,
+            127,
+            51
+        ],
+        "BLOCK_NAME": "橙色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 1,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "MAGENTA",
+        "COLOR": [
+            178,
+            76,
+            216
+        ],
+        "BLOCK_NAME": "赤紫色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 2,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "LIGHT_BLUE",
+        "COLOR": [
+            102,
+            153,
+            216
+        ],
+        "BLOCK_NAME": "空色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 3,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "YELLOW",
+        "COLOR": [
+            229,
+            229,
+            51
+        ],
+        "BLOCK_NAME": "黄色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 4,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "LIME",
+        "COLOR": [
+            127,
+            204,
+            25
+        ],
+        "BLOCK_NAME": "黄緑色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 5,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "PINK",
+        "COLOR": [
+            242,
+            127,
+            165
+        ],
+        "BLOCK_NAME": "桃色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 6,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "GRAY",
+        "COLOR": [
+            76,
+            76,
+            76
+        ],
+        "BLOCK_NAME": "灰色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 7,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "SILVER",
+        "COLOR": [
+            153,
+            153,
+            153
+        ],
+        "BLOCK_NAME": "薄灰色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 8,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "CYAN",
+        "COLOR": [
+            76,
+            127,
+            153
+        ],
+        "BLOCK_NAME": "青緑色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 9,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "PURPLE",
+        "COLOR": [
+            127,
+            63,
+            178
+        ],
+        "BLOCK_NAME": "紫色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 10,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "BLUE",
+        "COLOR": [
+            51,
+            76,
+            178
+        ],
+        "BLOCK_NAME": "青色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 11,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "BROWN",
+        "COLOR": [
+            102,
+            76,
+            51
+        ],
+        "BLOCK_NAME": "茶色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 12,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "GREEN",
+        "COLOR": [
+            102,
+            127,
+            51
+        ],
+        "BLOCK_NAME": "緑色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 13,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "RED",
+        "COLOR": [
+            153,
+            51,
+            51
+        ],
+        "BLOCK_NAME": "赤色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 14,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "BLACK",
+        "COLOR": [
+            25,
+            25,
+            25
+        ],
+        "BLOCK_NAME": "黒色の羊毛",
+        "BLOCK_ID": 35,
+        "DATA": 15,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "GOLD",
+        "COLOR": [
+            250,
+            238,
+            77
+        ],
+        "BLOCK_NAME": "金ブロック",
+        "BLOCK_ID": 41,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "DIAMOND",
+        "COLOR": [
+            92,
+            219,
+            213
+        ],
+        "BLOCK_NAME": "プリズマリンレンガ",
+        "BLOCK_ID": 168,
+        "DATA": 1,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "LAPIS",
+        "COLOR": [
+            74,
+            128,
+            255
+        ],
+        "BLOCK_NAME": "ラピスラズリブロック",
+        "BLOCK_ID": 22,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "EMERALD",
+        "COLOR": [
+            0,
+            217,
+            58
+        ],
+        "BLOCK_NAME": "エメラルドブロック",
+        "BLOCK_ID": 133,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "OBSIDIAN",
+        "COLOR": [
+            129,
+            86,
+            49
+        ],
+        "BLOCK_NAME": "マツの木材",
+        "BLOCK_ID": 5,
+        "DATA": 1,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "NETHERRACK",
+        "COLOR": [
+            112,
+            2,
+            0
+        ],
+        "BLOCK_NAME": "ネザーラック",
+        "BLOCK_ID": 87,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "WHITE_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            209,
+            177,
+            161
+        ],
+        "BLOCK_NAME": "白色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 0,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "ORANGE_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            159,
+            82,
+            36
+        ],
+        "BLOCK_NAME": "橙色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 1,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "MAGENTA_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            149,
+            87,
+            108
+        ],
+        "BLOCK_NAME": "赤紫色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 2,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "LIGHT_BLUE_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            112,
+            108,
+            138
+        ],
+        "BLOCK_NAME": "空色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 3,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "YELLOW_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            186,
+            133,
+            36
+        ],
+        "BLOCK_NAME": "黄色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 4,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "LIME_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            103,
+            117,
+            53
+        ],
+        "BLOCK_NAME": "黄緑色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 5,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "PINK_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            160,
+            77,
+            78
+        ],
+        "BLOCK_NAME": "桃色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 6,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "GRAY_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            57,
+            41,
+            35
+        ],
+        "BLOCK_NAME": "灰色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 7,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "SILVER_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            135,
+            107,
+            98
+        ],
+        "BLOCK_NAME": "薄灰色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 8,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "CYAN_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            87,
+            92,
+            92
+        ],
+        "BLOCK_NAME": "青緑色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 9,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "PURPLE_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            122,
+            73,
+            88
+        ],
+        "BLOCK_NAME": "紫色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 10,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "BLUE_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            76,
+            62,
+            92
+        ],
+        "BLOCK_NAME": "青色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 11,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "BROWN_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            76,
+            50,
+            35
+        ],
+        "BLOCK_NAME": "茶色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 12,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "GREEN_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            76,
+            82,
+            42
+        ],
+        "BLOCK_NAME": "緑色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 13,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "RED_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            142,
+            60,
+            46
+        ],
+        "BLOCK_NAME": "赤色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 14,
+        "USE": true
+    },
+    {
+        "COLOR_NAME": "BLACK_STAINED_HARDENED_CLAY",
+        "COLOR": [
+            37,
+            22,
+            16
+        ],
+        "BLOCK_NAME": "黒色のテラコッタ",
+        "BLOCK_ID": 159,
+        "DATA": 15,
+        "USE": true
+    }
+]
