@@ -1,5 +1,7 @@
 appnope==0.1.0
+astroid==2.4.2
 attrs==19.3.0
+autopep8==1.5.3
 backcall==0.2.0
 bleach==3.1.5
 certifi==2020.6.20
@@ -15,6 +17,7 @@ ipykernel==5.3.4
 ipython==7.16.1
 ipython-genutils==0.2.0
 ipywidgets==7.5.1
+isort==4.3.21
 jedi==0.17.2
 Jinja2==2.11.2
 jsonschema==3.2.0
@@ -23,8 +26,10 @@ jupyter-client==6.1.6
 jupyter-console==6.1.0
 jupyter-core==4.6.3
 kiwisolver==1.2.0
+lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 matplotlib==3.3.0
+mccabe==0.6.1
 mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
@@ -42,7 +47,9 @@ plotly==3.10.0
 prometheus-client==0.8.0
 prompt-toolkit==3.0.5
 ptyprocess==0.6.0
+pycodestyle==2.6.0
 Pygments==2.6.1
+pylint==2.5.3
 pyparsing==2.4.7
 pyrsistent==0.16.0
 python-dateutil==2.8.1
@@ -57,11 +64,14 @@ Send2Trash==1.5.0
 six==1.15.0
 terminado==0.8.3
 testpath==0.4.4
+toml==0.10.1
 tornado==6.0.4
 tqdm==4.48.0
 traitlets==4.3.3
+typed-ast==1.4.1
 urllib3==1.25.10
 wcwidth==0.2.5
 webencodings==0.5.1
 widgetsnbextension==3.5.1
+wrapt==1.12.1
 zipp==3.1.0
