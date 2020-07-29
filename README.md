@@ -1,6 +1,12 @@
 # obj2schematic
 
-Convert [Wavefront .obj file](#Supported-`.obj`-format) to [Minecraft Schematic file](https://minecraft.gamepedia.com/Schematic_file_format)
+Convert [Wavefront `.obj` file](#Supported-`.obj`-format) to [Minecraft `.schematic` file](https://minecraft.gamepedia.com/Schematic_file_format)
+
+**input `.obj`**
+![obj file](images/sample_obj_view.png)
+
+**output `.schematic`**
+![schematic file](images/sample_schematic_view.png)
 
 ## Supported `.obj` format
 
@@ -75,3 +81,11 @@ then, you run
 ```bash
 $ python Obj2SchemticConverter.py ./data/sample_data.obj --h_max 100 --w_max 150
 ```
+
+### 5. Import `.schematic` to your Minecraft World!!
+
+Import generated `.schematic` file to your own Minecraft World using [WorldEdit mod](https://www.curseforge.com/minecraft/mc-mods/worldedit).
+
+## Future work
+
+- Support `.obj` with `.mtl`.
