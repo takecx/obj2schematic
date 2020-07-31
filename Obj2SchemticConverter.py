@@ -94,7 +94,7 @@ class Obj2SchematicConverter(object):
         return ','.join([str(v) for v in row.values])
 
     def _load_config(self):
-        with open('config/block_info.json', 'r', encoding='utf-8') as f:
+        with open(os.path.join(os.path.dirname(__file__), 'config/block_info.json'), 'r', encoding='utf-8') as f:
             self.config = json.load(f)
 
     def _calc_nearest_block(self, obj_color, config):
@@ -149,7 +149,8 @@ class Obj2SchematicConverter(object):
                         self.data.append(color_data['DATA'])
 
     def output(self):
-        schem = nbt.load('empty_schematic')
+        schem = nbt.load(os.path.join(
+            os.path.dirname(__file__), 'empty_schematic'))
         out_path = os.path.join('output', self.out_schem)
         self._packing(schem)
         self._save_schematic(out_path, schem)
