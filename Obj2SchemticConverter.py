@@ -9,7 +9,7 @@ from nbtlib import nbt, tag
 
 
 class Obj2SchematicConverter(object):
-    def __init__(self, obj_path, height_max=100, width_max=100):
+    def __init__(self, obj_path, output_dir, height_max, width_max):
         '''
         constructor
         '''
@@ -19,6 +19,11 @@ class Obj2SchematicConverter(object):
         self.denorm_colors = ['denorm_r', 'denorm_g', 'denorm_b']
         self.coor_id = 'coordinate_id'
 
+        if output_dir == None:
+            self.output_dir = os.path.join(
+                os.path.dirname(__file__), 'output')
+        else:
+            self.output_dir = output_dir
         self.HEIGHT_MAX = height_max
         self.WIDTH_MAX = width_max
         self.typical_colors = {}
@@ -151,7 +156,8 @@ class Obj2SchematicConverter(object):
     def output(self):
         schem = nbt.load(os.path.join(
             os.path.dirname(__file__), 'empty_schematic'))
-        out_path = os.path.join('output', self.out_schem)
+        out_path = os.path.join(self.output_dir, self.out_schem)
+        os.makedirs(self.output_dir, exist_ok=True)
         self._packing(schem)
         self._save_schematic(out_path, schem)
 
@@ -172,6 +178,8 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("obj_file",
                         help="input .obj file path")
+    parser.add_argument('--output_dir', type=str, default=None,
+                        help='Output dir of generated .schematic file.')
     parser.add_argument('--h_max', type=int, default=100,
                         help='Max height of converted schematic object.')
     parser.add_argument('--w_max', type=int, default=100,
@@ -186,7 +194,7 @@ if __name__ == '__main__':
         args = get_args()
         print('start converting...')
         converter = Obj2SchematicConverter(
-            args.obj_file, args.h_max, args.w_max)
+            args.obj_file, args.output_dir, args.h_max, args.w_max)
         converter.convert()
         converter.output()
     except Exception as e:

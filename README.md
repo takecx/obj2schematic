@@ -61,25 +61,27 @@ Put input `.obj` file to `./data/` dir for example.
 Run `Obj2SchematicConverter.py` with some arguments.
 
 ```bash
-$ python Obj2SchemticConverter.py (.obj_file) --h_max (height max value) --w_max (width max value)
+$ python Obj2SchemticConverter.py (.obj_file) --output_dir (output dir) --h_max (height max value) --w_max (width max value)
 ```
 
 #### Arguments
 
-1. input `.obj` file (required)
-2. `--h_max` : max height of converted schematic (optional)
-3. `--w_max` : max width(length) of converted schematic (optional)
+1. input `.obj` file (**required**)
+2. `--output_dir` : Output dir of generated .schematic file (optional)
+3. `--h_max` : max height of converted schematic (optional)
+4. `--w_max` : max width(length) of converted schematic (optional)
 
 For example, 
 
 - input `.obj` file : `./data/sample_data.obj`
-- `--h_max` : 100
-- `--w_max` : 150
+- `--output_dir` : `./output/`
+- `--h_max` : `100`
+- `--w_max` : `150`
 
 then, you run 
 
 ```bash
-$ python Obj2SchemticConverter.py ./data/sample_data.obj --h_max 100 --w_max 150
+$ python Obj2SchemticConverter.py ./data/sample_data.obj --output_dir ./output/ --h_max 100 --w_max 150
 ```
 
 ### 5. Import `.schematic` to your Minecraft World!!
