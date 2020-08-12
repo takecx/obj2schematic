@@ -33,7 +33,7 @@ class Obj2SchematicConverter(object):
             0] + '.schematic'
 
         # create .obj DataFrame
-        scene = pywavefront.Wavefront(obj_path)
+        scene = pywavefront.Wavefront(obj_path, parse=False)
         self.df = pd.DataFrame(
             scene.vertices, columns=self.coordinates + self.colors)
 
