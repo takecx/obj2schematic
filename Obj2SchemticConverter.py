@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import json
 from tqdm import tqdm
+import traceback
 
 import pywavefront
 from nbtlib import nbt, tag
@@ -199,3 +200,4 @@ if __name__ == '__main__':
         converter.output()
     except Exception as e:
         print('convert failed: ', e)
+        print(traceback.format_exc())
