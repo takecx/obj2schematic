@@ -4,6 +4,7 @@ import numpy as np
 import json
 from tqdm import tqdm
 import traceback
+import cv2
 
 import pywavefront
 from nbtlib import nbt, tag
@@ -34,12 +35,59 @@ class Obj2SchematicConverter(object):
             0] + '.schematic'
 
         # create .obj DataFrame
-        scene = pywavefront.Wavefront(obj_path, parse=False)
-        self.df = pd.DataFrame(
-            scene.vertices, columns=self.coordinates + self.colors)
+        self.df = self._create_obj_df(obj_path)
 
         self._preprocess_data()
         self._load_config()
+
+    def _create_obj_df(self, obj_path):
+        obj_root = os.path.dirname(obj_path)
+        scene = pywavefront.Wavefront(obj_path)
+        if len(scene.mtllibs) != 0:
+            is_first = True
+            for _, material in scene.materials.items():
+                if is_first:
+                    is_first = False
+                else:
+                    raise Exception('material should be single')
+                img_name = material.texture.file_name
+                img_path = os.path.join(obj_root, img_name)
+                if not os.path.exists(img_path):
+                    raise Exception('mapping file does not exists')
+                img = cv2.imread(img_path)
+                img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+                h, w, _ = img.shape
+
+                vt_colors = []
+                org_contents = []
+                a = []
+                mtllib = ''
+                with open(obj_path, 'r') as f:
+                    vs = f.readlines()
+                for v in vs:
+                    contents = v.split(' ')
+                    if contents[0] not in a:
+                        a.append(contents[0])
+                    if contents[0] == 'vt':
+                        y = float(contents[1]) * (w - 1)
+                        x = float(contents[2]) * (h - 1)
+                        vt_colors.append(img_rgb[(w-1) - int(x), int(y)])
+                    if contents[0] == 'mtllib':
+                        mtllib = v
+                    elif contents[0] != 'v':
+                        org_contents.append(v)
+
+                new_vertices = []
+                COLOR_MAX = 255
+                for index, v in enumerate(scene.vertices):
+                    rgb = vt_colors[index] / COLOR_MAX
+                    new_vertices.append(
+                        (v[0], v[1], v[2], rgb[0], rgb[1], rgb[2]))
+            vertices = new_vertices
+        else:
+            vertices = scene.vertices
+        return pd.DataFrame(
+            vertices, columns=self.coordinates + self.colors)
 
     def _preprocess_data(self):
         '''
