@@ -10,6 +10,8 @@ Convert [Wavefront `.obj` file](#Supported-`.obj`-format) to [Minecraft `.schema
 
 ## Supported `.obj` format
 
+### 1. geometric vertices with `(x, y, z, r, g, b)`
+
 From [Wavefront .obj file Wiki](https://en.wikipedia.org/wiki/Wavefront_.obj_file)
 
 > Geometric vertex
@@ -31,6 +33,54 @@ v -0.3448 -0.1172 0.0312 0.4752 0.3522 0.2750
 v -0.3438 -0.1247 0.0391 0.4596 0.3380 0.2640
 v -0.3446 -0.1172 0.0391 0.4747 0.3515 0.2741
 :
+```
+
+### 2. `.obj` with `.mtl`
+
+*`.obj` sample*
+
+```txt
+# OBJ File:
+
+mtllib ./result.mtl
+
+# vertices:
+v -9.1863 9.1863 -5.0000
+v -8.8947 9.1863 -5.0000
+v -8.6904 9.2796 -6.0667
+:
+
+# vertice textures:
+vt 0.0000 1.0000
+vt 0.0159 1.0000
+vt 0.0317 1.0000
+:
+
+# vertice normals:
+vn -0.0000 0.0000 1.0000
+vn -0.0000 0.0000 1.0000
+vn -0.0000 0.0000 1.0000
+:
+
+# faces:
+
+usemtl tex
+f 1/1/1 65/65/65 4097/4097/4097
+f 2/2/2 66/66/66 4098/4098/4098
+f 3/3/3 67/67/67 4099/4099/4099
+:
+```
+
+*`.mtl` sample*
+
+```txt
+newmtl tex
+Ka 1.0000 1.0000 1.0000
+Kd 1.0000 1.0000 1.0000
+Ks 0.0000 0.0000 0.0000
+d 1.0
+illum 0
+map_Kd ./img.png
 ```
 
 ## How to Use
@@ -87,7 +137,3 @@ $ python Obj2SchemticConverter.py ./data/sample_data.obj --output_dir ./output/ 
 ### 5. Import `.schematic` to your Minecraft World!!
 
 Import generated `.schematic` file to your own Minecraft World using [WorldEdit mod](https://www.curseforge.com/minecraft/mc-mods/worldedit).
-
-## Future work
-
-- Support `.obj` with `.mtl`.
