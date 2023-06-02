@@ -168,10 +168,8 @@ class Obj2SchematicConverter(object):
         '''
         各ボクセルの色の代表値を決める
         '''
-        for coor_id_val in tqdm(set(self.df[self.coor_id])):
-            target = self.df[self.df[self.coor_id] ==
-                             coor_id_val][self.colors + self.denorm_colors]
-            self.typical_colors[coor_id_val] = target.mean()
+        self.typical_colors = self.df.groupby(self.coor_id)[self.colors + self.denorm_colors].mean().T.to_dict()
+
 
         #
         bounds_e = self.df[self.coordinates].apply(max)
@@ -179,7 +177,7 @@ class Obj2SchematicConverter(object):
             list((bounds_e + 1).apply(np.ceil).values.astype(int)) + [3])
         for coor, color in tqdm(self.typical_colors.items()):
             x, y, z = [int(v) for v in coor.split(',')]
-            voxels[x, y, z] = color[self.denorm_colors].values
+            voxels[x, y, z] = pd.DataFrame([color])[self.denorm_colors].values
         return voxels
 
     def _convert_to_block(self, voxels):
