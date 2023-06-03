@@ -147,17 +147,12 @@ class Obj2SchematicConverter(object):
             self.config = json.load(f)
 
     def _calc_nearest_block(self, obj_color, config):
-        best = float('inf')
-        for c in config:
-            p_color = c['COLOR']
-            diff = obj_color - p_color
-            diff_dist = sum(diff ** 2)
-            if best > diff_dist:
-                best = diff_dist
-                color_data = c
-                if best == 0:
-                    break
-        return color_data
+        colors = np.array([c['COLOR'] for c in config])
+        diffs = colors - obj_color
+        dists = np.sum(diffs ** 2, axis=1)
+        best_index = np.argmin(dists)
+        
+        return config[best_index]
 
     def convert(self):
         print('start converting...')
