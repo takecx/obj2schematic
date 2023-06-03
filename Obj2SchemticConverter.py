@@ -147,17 +147,12 @@ class Obj2SchematicConverter(object):
             self.config = json.load(f)
 
     def _calc_nearest_block(self, obj_color, config):
-        best = float('inf')
-        for c in config:
-            p_color = c['COLOR']
-            diff = obj_color - p_color
-            diff_dist = sum(diff ** 2)
-            if best > diff_dist:
-                best = diff_dist
-                color_data = c
-                if best == 0:
-                    break
-        return color_data
+        colors = np.array([c['COLOR'] for c in config])
+        diffs = colors - obj_color
+        dists = np.sum(diffs ** 2, axis=1)
+        best_index = np.argmin(dists)
+        
+        return config[best_index]
 
     def convert(self):
         print('start converting...')
@@ -168,18 +163,20 @@ class Obj2SchematicConverter(object):
         '''
         各ボクセルの色の代表値を決める
         '''
-        for coor_id_val in tqdm(set(self.df[self.coor_id])):
-            target = self.df[self.df[self.coor_id] ==
-                             coor_id_val][self.colors + self.denorm_colors]
-            self.typical_colors[coor_id_val] = target.mean()
+        # Typical colors
+        self.typical_colors = self.df.groupby(self.coor_id)[self.colors + self.denorm_colors].mean().T.to_dict()
 
-        #
-        bounds_e = self.df[self.coordinates].apply(max)
-        voxels = np.zeros(
-            list((bounds_e + 1).apply(np.ceil).values.astype(int)) + [3])
-        for coor, color in tqdm(self.typical_colors.items()):
-            x, y, z = [int(v) for v in coor.split(',')]
-            voxels[x, y, z] = color[self.denorm_colors].values
+        # Voxels
+        bounds_e = self.df[self.coordinates].max()
+        voxels_shape = np.ceil(bounds_e + 1).astype(int)
+        voxels = np.zeros(voxels_shape.tolist() + [3])
+
+        coor_list = [list(map(int, coor.split(','))) for coor in self.typical_colors.keys()]
+        color_array = np.array(list(self.typical_colors.values()))
+
+        x_indices, y_indices, z_indices = np.transpose(coor_list).astype(int)
+        voxels[x_indices, y_indices, z_indices] = pd.DataFrame(list(color_array))[self.denorm_colors].to_numpy()
+        
         return voxels
 
     def _convert_to_block(self, voxels):
